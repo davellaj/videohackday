@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Team No Idea Yet</title>
+    <script src="//static.opentok.com/webrtc/v2.2/js/TB.min.js"></script>
+    <script type="text/javascript">
+        var apiKey = '{{ api_key }}';
+        var sessionId = '{{ session_id }}';
+        var token = '{{ token }}';
+    </script>
+    <script src="{{ url_for('static', filename='product-stream.js') }}"></script>
+</head>
+<body>
+
+    <div id="publisher"></div>
+
+    <div id="subscribers"></div>
+</body>
+</html>
