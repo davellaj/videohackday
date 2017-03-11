@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProductImg from './components/productImg'
+import ProductContainer from './components/ProductContainer'
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
         <p className="App-intro">
           put video here
         </p>
-        <ProductImg />
+        <ProductContainer />
       </div>
     );
   }
