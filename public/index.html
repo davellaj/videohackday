@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!-- link to ziggeo -->
     <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
     <script>ZiggeoApi.token = "f1af97ca0954c2822f344cd002577269";</script>
+    <script>ZiggeoApi.Config.cdn = true;</script>
+    <script>ZiggeoApi.Config.webrtc = true;</script>
+
     <title>React App</title>
   </head>
   <body>
+    <div id="jquery"></div>
     <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
-    <script charset="utf-8">
+    <!-- <script charset="utf-8">
       var apiKey = '45791732';
       var sessionId = '2_MX40NTc5MTczMn5-MTQ4OTI0NjAxMjU2NH4rNlI4S1FGRCt5SUlkamIrR0paRFc5ZVl-fg';
       var token = 'T1==cGFydG5lcl9pZD00NTc5MTczMiZzaWc9YzRlNjNjYmVjZGVmMDYwZDQ1Nzc1NmJkZWUzN2IxZmZiZGI1NDEyZjpzZXNzaW9uX2lkPTJfTVg0ME5UYzVNVGN6TW41LU1UUTRPVEkwTmpBeE1qVTJOSDRyTmxJNFMxRkdSQ3Q1U1Vsa2FtSXJSMHBhUkZjNVpWbC1mZyZjcmVhdGVfdGltZT0xNDg5MjQ2MDI3Jm5vbmNlPTAuMDExNzg3MTk2MjUxMzYwOTMyJnJvbGU9cHVibGlzaGVyJmV4cGlyZV90aW1lPTE0OTE4MzQ0MjY=';
@@ -23,17 +29,31 @@
           var publisher = OT.initPublisher();
           session.publish(publisher);
         });
-    </script>
+    </script> -->
+
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <ziggeo
+      ziggeo-perms="allowupload"
+      ziggeo-width=320
+      ziggeo-height=240
+    >
+    </ziggeo>
 
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
+<script>
+ZiggeoApi.Events.on("submitted", function (data) {
+    alert("The video with token " + data.video.token + " has been submitted!");
+});
+</script>
+<script>
+    ZiggeoApi.Videos.index({}, {
+        success: function (args, videos) {
+            for (var i = 0; i < videos.length; ++i)
+                $("#jquery").append("<ziggeo ziggeo-video='" + videos[i].token + "'></ziggeo>");
+        }
+    });
+</script>
+
+
   </body>
 </html>
