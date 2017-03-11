@@ -4,33 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-
-    <!--
-      Notice the use of %PUBLIC_URL% in the tag above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
+    <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
+    <script>ZiggeoApi.token = "f1af97ca0954c2822f344cd002577269";</script>
     <title>React App</title>
   </head>
   <body>
     <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
-<script charset="utf-8">
-  var apiKey = '45791732';
-  var sessionId = '2_MX40NTc5MTczMn5-MTQ4OTI0NjAxMjU2NH4rNlI4S1FGRCt5SUlkamIrR0paRFc5ZVl-fg';
-  var token = 'T1==cGFydG5lcl9pZD00NTc5MTczMiZzaWc9YzRlNjNjYmVjZGVmMDYwZDQ1Nzc1NmJkZWUzN2IxZmZiZGI1NDEyZjpzZXNzaW9uX2lkPTJfTVg0ME5UYzVNVGN6TW41LU1UUTRPVEkwTmpBeE1qVTJOSDRyTmxJNFMxRkdSQ3Q1U1Vsa2FtSXJSMHBhUkZjNVpWbC1mZyZjcmVhdGVfdGltZT0xNDg5MjQ2MDI3Jm5vbmNlPTAuMDExNzg3MTk2MjUxMzYwOTMyJnJvbGU9cHVibGlzaGVyJmV4cGlyZV90aW1lPTE0OTE4MzQ0MjY=';
-  var session = OT.initSession(apiKey, sessionId)
-    .on('streamCreated', function(event) {
-      session.subscribe(event.stream);
-    })
-    .connect(token, function(error) {
-      var publisher = OT.initPublisher();
-      session.publish(publisher);
-    });
-</script>
+    <script charset="utf-8">
+      var apiKey = '45791732';
+      var sessionId = '2_MX40NTc5MTczMn5-MTQ4OTI0NjAxMjU2NH4rNlI4S1FGRCt5SUlkamIrR0paRFc5ZVl-fg';
+      var token = 'T1==cGFydG5lcl9pZD00NTc5MTczMiZzaWc9YzRlNjNjYmVjZGVmMDYwZDQ1Nzc1NmJkZWUzN2IxZmZiZGI1NDEyZjpzZXNzaW9uX2lkPTJfTVg0ME5UYzVNVGN6TW41LU1UUTRPVEkwTmpBeE1qVTJOSDRyTmxJNFMxRkdSQ3Q1U1Vsa2FtSXJSMHBhUkZjNVpWbC1mZyZjcmVhdGVfdGltZT0xNDg5MjQ2MDI3Jm5vbmNlPTAuMDExNzg3MTk2MjUxMzYwOTMyJnJvbGU9cHVibGlzaGVyJmV4cGlyZV90aW1lPTE0OTE4MzQ0MjY=';
+      var session = OT.initSession(apiKey, sessionId)
+        .on('streamCreated', function(event) {
+          session.subscribe(event.stream);
+        })
+        .connect(token, function(error) {
+          var publisher = OT.initPublisher();
+          session.publish(publisher);
+        });
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.

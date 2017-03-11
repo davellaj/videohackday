@@ -8,9 +8,9 @@ export class SavedVideo extends Component {
   render() {
     return(
       <div>
-        <video width="400" controls>
-          <source src="https://www.youtube.com/watch?v=NpEaa2P7qZI" type="video/mp3" />
-        </video>
+      <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/XGSy3_Czz8k">
+      </iframe>
       </div>
     )
   }
